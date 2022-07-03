@@ -1,0 +1,67 @@
+const {defineConfig} = require('eslint-define-config')
+
+module.exports = defineConfig({
+  /**
+   * root
+   * 布尔值，是否开启 eslint
+   */
+  root: true,
+  /**
+   * env: 配置编译器宏环境
+   */
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  /* parser: https://eslint.vuejs.org/user-guide/#usage */
+  parser: 'vue-eslint-parser',
+  /**
+   * extends: 在此添加更多通用规则集
+   */
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'standard',
+    'prettier',
+    'plugin:prettier/recommended',
+  ],
+  /**
+   * todo：parserOptions
+   * 使用 @typescript-eslint/parser 自定义解析器
+   * 需配置 parserOptions 属性设置解析器
+   * * parser
+   * 可选，自定义解析器
+   * 如：@typescript-eslint/parser
+   * * ecmaVersion
+   * 指定 ECMAScript 语法版本: 3、5(默认ES5)、6
+   * 基于年份命名: 2015 (同6)、2016 (同7)、2017 (同8)
+   * 最新支持版本: lastest
+   * * sourceType
+   * 默认: script
+   * ECMAScript 模块代码: module
+   * * ecmaFeatures
+   * 可选，对象，指示使用附加的语言功能
+   * globalReturn: 允许 return 全局范围内的语句
+   * impliedStrict: 布尔值，ecmaVersion >= 5，启用全局严格模式
+   * jsx: 是否启用 JSX
+   * * allowReserved
+   * 可选，布尔值
+   * 是否允许使用保留字作为标识符
+   * ecmaVersion 为 3时，为 true，允许使用
+   */
+  parserOptions: {
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+  },
+  /**
+   * plugins：插件配置入口
+   */
+  plugins: ['vue', '@typescript-eslint', 'import', 'n', 'promise', 'prettier'],
+  /**
+   * 在此覆盖或添加规则设置
+   */
+  rules: {
+  },
+})

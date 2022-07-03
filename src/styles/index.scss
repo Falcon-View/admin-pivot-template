@@ -1,0 +1,14 @@
+/*
+* 引入 normalize/index.css 初始化浏览器样式
+*/
+@import "./normalize/index.css";
+
+/*
+* 引入 custom 自定义常用全局适配样式
+*/
+@import "./custom/index";
+
+/*
+* 引入 comment 全局公共样式
+*/
+@import "./comment/index";

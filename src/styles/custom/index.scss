@@ -1,0 +1,172 @@
+/*
+* 引入常用全局变量
+*/
+@import './constant';
+
+// 16 位进制文本颜色和背景颜色
+@each $colorKey, $color in $colors {
+  .text-#{$colorKey} {
+    color: $color;
+  }
+  .bg-#{$colorKey} {
+    background-color: $color;
+  }
+}
+
+// 字体尺寸
+@each $sizeKey, $size in $font-sizes {
+  .fs-#{$sizeKey} {
+    font-size: $size * $base-font-size;
+  }
+}
+
+// 字体粗细
+@each $weightKey, $weight in $font-weights {
+  .fw-#{$weightKey} {
+    font-weight: $weight * $base-font-weight;
+  }
+}
+
+// 文本对齐方式
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var !important;
+  }
+}
+
+// 文本省略与换行
+@each $var in (2, 3, 4) {
+  // 单行文本省略
+  .text-ellipsis {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  // 英文自动换行
+  .text-ellipsis-en {
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  // 多行文本省略
+  .text-ellipsis-#{$var} {
+    display: -webkit-box;
+    -webkit-line-clamp: $var;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+}
+
+// 百分比、视口宽度和高度
+@each $percentKey, $per in $percent {
+  .w-#{$percentKey} {
+    width: $per * $base-width;
+  }
+  .vw-#{$percentKey} {
+    width: $per * $base-vw;
+  }
+  .h-#{$percentKey} {
+    height: $per * $base-height;
+  }
+  .vh-#{$percentKey} {
+    height: $per * $base-vh;
+  }
+}
+
+/*
+* Start: Flex 布局
+*/
+.flex {
+  display: flex;
+}
+
+// 垂直方向
+.flex-column {
+  flex-direction: column;
+}
+
+// 换行
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// justify-content
+@each $Key, $value in $flex-jc {
+  .jc-#{$Key} {
+    justify-content: $value;
+  }
+}
+
+// align-items
+@each $Key, $value in $flex-ai {
+  .ai-#{$Key} {
+    flex-grow: 1;
+    align-items: $value;
+  }
+}
+
+// flex / flex-grow
+@each $var in (1, 2, 3, 4, 5) {
+  .flex-#{$var} {
+    flex: $var;
+  }
+  .flex-grow-#{$var} {
+    flex-grow: $var;
+  }
+}
+
+/*
+* End: Flex 布局
+*/
+
+/*
+* Start：内、外边距(padding、margin)
+*/
+@each $typeKey, $type in $spacing-types {
+  // 四向等内边距或外边距，如 m-10：四向等外边距为 10
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $base-spacing-size;
+    }
+  }
+
+  // 水平或竖直方向上等内边距或外边距，mx-10：水平方向上外边距为 10
+  @each $sizeKey, $size in $spacing-sizes {
+    // 水平方向
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $base-spacing-size;
+      #{$type}-right: $size * $base-spacing-size;
+    }
+
+    // 竖直方向
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $base-spacing-size;
+      #{$type}-bottom: $size * $base-spacing-size;
+    }
+  }
+
+  // 某一方向上内边距或外边距，mt-10：上外边距为 10
+  @each $directionKey, $direction in $spacing-directions {
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+        #{$type}-#{$direction}: $size * $base-spacing-size;
+      }
+    }
+  }
+}
+
+/*
+* End：内、外边距(padding、margin)
+*/
+
+// border 边框
+@each $directionKey, $direction in $spacing-directions {
+  @each $var in (1, 2, 3) {
+    .b#{$directionKey}-#{$var} {
+      border-#{$direction}: 1px solid $border-color;
+    }
+  }
+}

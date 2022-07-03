@@ -1,0 +1,138 @@
+module.exports = {
+  /**
+   * arrowParens
+   * 在箭头函数的唯一参数两侧使用圆括号
+   * 默认：always，(x) => x
+   * avoid：不使用 ()
+   */
+  arrowParens: 'always',
+  /**
+   * bracketSameLine
+   * 把多行 HTML (HTML, JSX, Vue, Angular)元素的 > 放在最后一行的末尾，而不是单独放在下一行(不适用于自关闭元素)
+   * 默认：fasle，单行放置 > 与标签开头 < 放在同一列
+   * true：> 放在语句结尾
+   */
+  bracketSameLine: false,
+  /**
+   * jsxBracketSameLine
+   * 将多行 JSX 元素的 > 放在最后一行的末尾，而不是单独放在下一行(不适用于自关闭元素)
+   * 默认：fasle，单行放置 > 与标签开头 < 放在同一列
+   * true：> 放在语句结尾
+   * 已经被废弃
+   */
+  // jsxBracketSameLine: false,
+  /**
+   * bracketSpacing
+   * 打印对象字面量中括号之间的空格
+   * 默认：true，{ foo: bar }
+   * false：{foo: bar}
+   */
+  bracketSpacing: true,
+  /**
+   * embeddedLanguageFormatting
+   * 控制是否将文件中嵌入的引号代码格式化为Prettier格式
+   * 默认：auto，如果Prettier能自动识别嵌入的代码，就格式化它
+   * off：从不自动格式化嵌入的代码
+   */
+  embeddedLanguageFormatting: 'auto',
+  /**
+   * htmlWhitespaceSensitivity
+   * 为 HTML、Vue、Angular和Handlebars 指定全局空格敏感
+   * 默认：css，尊重 CSS display 属性的默认值，对 Handlebars 同样严格
+   * strict：所有标记周围的空格(或没有空格)都被认为是重要的
+   * ignore：所有标记周围的空格(或没有空格)被认为是不重要的
+   */
+  htmlWhitespaceSensitivity: 'css',
+  /**
+   * jsxSingleQuote
+   * 在 JSX 中使用单引号而不是双引号
+   * 默认：false
+   */
+  jsxSingleQuote: false,
+  /**
+   * printWidth
+   * 指定换行字符数，默认：80
+   */
+  printWidth: 80,
+  /**
+   * proseWrap
+   * 默认：preserve，保持原样，不改变
+   * never：不换行的每一段放入一行
+   * always：如果超过打印宽度文本换行
+   */
+  proseWrap: 'preserve',
+  /**
+   * quoteProps
+   * 对象中属性被引用时更改
+   * 默认：as-needed：只在需要的对象属性周围添加引号
+   * consistent：如果一个对象中至少有一个属性需要引用，那么引用所有属性
+   * preserve：着眼于对象属性中引号的输入用法
+   */
+  quoteProps: 'as-needed',
+  /**
+   * requirePragma
+   * Prettier可以将自己限制为只格式化在文件顶部包含特殊注释(称为pragma)的文件
+   * 默认：false，不局部格式化
+   */
+  requirePragma: false,
+  /**
+   * insertPragma
+   * Prettier可以在文件的顶部插入一个特殊的@format标记，以指定该文件已经使用Prettier进行了格式化
+   * 默认：false
+   */
+  insertPragma: false,
+  /**
+   * semi
+   * 语句结尾加分号
+   * 默认：false，只在可能引入 ASI 故障的行开头添加分号
+   * true；所有语句结尾都加分号
+   */
+  semi: false,
+  /**
+   * endOfLine
+   * 所有操作系统中的所有现代文本编辑器都能够正确显示行结束符
+   */
+  endOfLine: 'auto',
+  /**
+   * singleQuote
+   * 使用单引号而不是双引号
+   * 默认：false，不使用单引号
+   * true：使用单引号
+   */
+  singleQuote: true,
+  /**
+   * tabWidth
+   * 指定缩进级别空格数
+   * 默认：2 个空格
+   */
+  tabWidth: 2,
+  /**
+   * trailingComma
+   * 在多行逗号分隔的语法结构中，尽可能加上末尾逗号 (例如，单行数组末尾从不使用逗号)
+   * 默认：es5，在ES5中有效的地方用逗号结尾(对象、数组等)。 TypeScript的类型参数中不允许带逗号
+   * none：不加结尾逗号
+   * all：在可能的位置如(包括函数参数和调用)结尾加逗号。 要运行这种格式的JavaScript代码，需要一个支持ES2017 (Node.js 8+或现代浏览器)或底层编译的引擎。 这也支持在TypeScript的类型参数中添加尾随逗号(自2018年1月发布的TypeScript 2.7以来就支持了)。
+   */
+  trailingComma: 'es5',
+  /**
+   * useTabs
+   * 使用 tab 缩进
+   * 默认：false，不使用 tab 制表符
+   */
+  useTabs: false,
+  /**
+   * vueIndentScriptAndStyle
+   * 是否缩进Vue文件中的<script>和<style>标记内的代码。 有些人(比如Vue的创建者)不使用缩进来保存缩进级别，但这可能会破坏编辑器中的代码折叠
+   * 默认：false，在Vue文件中不缩进脚本和样式标签
+   */
+  vueIndentScriptAndStyle: false,
+  /**
+   * range
+   * 只格式化文件的一部分
+   * 这两个选项可用于格式化以给定字符偏移量开始和结束的代码(分别包括和排除)。 范围将扩大:
+   * rangeStart：返回到包含所选语句的第一行的开头
+   * rangeEnd：转到所选语句的末尾
+   */
+  rangeStart: 0,
+  rangeEnd: Infinity,
+}

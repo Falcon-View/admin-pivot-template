@@ -1,0 +1,123 @@
+/*
+* 用于解决使用 map.get() 报错无 map 模块
+* 也可用 map-get($map: $colors, $key: '')，但样式检查报错
+*/
+@use "sass:map";
+
+// 自定义颜色
+$colors: (
+  "primary": #db9e3f,
+  "green": #0ef00e,
+  "red-1": #ff1d5e,
+  "info": #4b67af,
+  "danger": #791a15,
+  "blue-1": #1f3695,
+  "blue": #4394e4,
+  "white": #fff,
+  "white-1": #fcfcfc,
+  "white-2": #eceef0,
+  "light": #f9f9f9,
+  "light-1": #d4d9de,
+  "grey": #a2a1a1,
+  "grey-1": #666,
+  "dark-1": #343440,
+  "dark": #222,
+  "black": #000,
+);
+
+// 字体尺寸
+$base-font-size: 1px;
+$font-sizes: (
+  8: 8,
+  10: 10,
+  12: 12,
+  13: 13,
+  14: 14,
+  16: 16,
+  18: 18,
+  20: 20,
+  25: 25,
+  32: 32,
+);
+
+// 字体粗细
+$base-font-weight: 50;
+$font-weights: (
+  "100": 2,
+  "200": 4,
+  "300": 6,
+  "400": 8,
+  "500": 10,
+  "600": 12,
+  "700": 14,
+  "800": 16,
+  "900": 18,
+  "1000": 20,
+);
+
+// 宽度高度百分比
+$base-width: 5%;
+$base-height: 5%;
+$base-vw: 5vw;
+$base-vh: 5vh;
+$percent: (
+  "10": 2,
+  "20": 4,
+  "25": 5,
+  "30": 6,
+  "40": 8,
+  "45": 9,
+  "50": 10,
+  "60": 12,
+  "70": 14,
+  "75": 15,
+  "80": 16,
+  "90": 18,
+  "100": 20,
+);
+
+// justify-content
+$flex-jc: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+);
+
+// align-items
+$flex-ai: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+);
+
+// 内、外边距(padding、margin)
+$spacing-types: (
+  m: margin,
+  p: padding,
+);
+
+// 边距方向
+$spacing-directions: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+);
+
+// 边距尺寸
+$base-spacing-size: 1px;
+$spacing-sizes: (
+  0: 0,
+  10: 10,
+  15: 15,
+  20: 20,
+  25: 25,
+  30: 30,
+  50: 50,
+);
+
+// 变量赋值
+$border-color: map.get($colors, "info");

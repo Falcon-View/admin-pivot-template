@@ -1,0 +1,13 @@
+node_modules/*
+.hbuilderx/*
+unpackage/*
+uni_modules/*
+
+/dist/
+/static/css/common.css
+
+
+# 其他类型文件
+*.js
+*.jpg
+*.woff
