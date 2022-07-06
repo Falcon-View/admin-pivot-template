@@ -7,10 +7,7 @@ module.exports = {
     'stylelint-config-rational-order',
   ],
   plugins: ['stylelint-order', 'stylelint-config-rational-order/plugin'],
-  ignoreFiles: [
-    'src/styles/normalize/index.css',
-    'src/styles/custom/index.scss',
-  ],
+  ignoreFiles: ['src/styles/normalize/index.css'],
   rules: {
     /**
      * 自修
