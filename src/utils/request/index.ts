@@ -18,14 +18,14 @@ const request = new Request({
   interceptors: {
     // 实例请求拦截器
     requestInterceptors: (config) => {
-      console.log('实例请求拦截器', 2)
-      console.log(config, 222)
+      // console.log('实例请求拦截器', 2)
+      // console.log(config, 222)
       return config
     },
     // 实例响应拦截器
     responseInterceptors: (result: AxiosResponse) => {
-      console.log('实例响应拦截器', 4)
-      console.log(result, 444)
+      // console.log('实例响应拦截器', 4)
+      // console.log(result, 444)
       return result
     },
   },
@@ -39,7 +39,7 @@ const request = new Request({
  * @returns {Promise}
  */
 const fwlRequest = <D = any, T = any>(config: FWLRequestConfig<D, T>) => {
-  console.log(config, 89884884888588)
+  // console.log(config, 89884884888588)
   const { method = 'GET' } = config
   if (method.toLowerCase() === 'get' || method.toLowerCase() === 'delete') {
     config.params = config.data

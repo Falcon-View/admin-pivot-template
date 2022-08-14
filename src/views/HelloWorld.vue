@@ -21,6 +21,13 @@
       <el-button style="margin-left: 0;" @click="cancelAllRequest"
         >取消全部请求</el-button
       >
+      <input
+        ref="getFile"
+        type="file"
+        multiple
+        accept="image/*"
+        @change="importOne"
+      />
     </div>
   </div>
 </template>
@@ -31,6 +38,7 @@ import { useLoadingStore } from '@/store/modules/loading'
 import { storeToRefs } from 'pinia'
 import { cancelRequest, cancelAllRequest } from '@/utils/request'
 import $test from '@/api/test'
+import { ref } from 'vue'
 
 const loadingStore = useLoadingStore()
 const { loading } = storeToRefs(loadingStore)
@@ -38,6 +46,40 @@ const { loading } = storeToRefs(loadingStore)
 async function getByArea() {
   await $test.get15DaysWeatherByArea({ id: 2 })
 }
+
+const getFile = ref(null)
+// onMounted(() => {
+//   console.log(file)
+// })
+
+// async function importOne() {
+//   const files = getFile.value.files
+
+//   const formData = new FormData()
+//   console.log(files, 'Data')
+//   formData.append('files', files[0])
+//   await $test.postFileArr(formData)
+// }
+// async function importArr() {
+//   const files = getFile.value.files
+
+//   const formData = new FormData()
+//   console.log(files, 'Data')
+//   formData.append('files', files[0])
+//   formData.append('files', files[1])
+
+//   await $test.postFileArr(formData)
+// }
+// async function importMore() {
+//   const files = getFile.value.files
+
+//   const formData = new FormData()
+//   console.log(files, 'Data')
+//   formData.append('files', files[0])
+//   formData.append('files', files[1])
+
+//   await $test.postFileMore(formData)
+// }
 </script>
 
 <style scoped lang="scss">

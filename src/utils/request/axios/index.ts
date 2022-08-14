@@ -57,8 +57,8 @@ class Request {
           loadingStore.open()
           // 当为 true 时，显示 loading 图标
         }
-        console.log('全局请求拦截器', 3)
-        console.log(req, 333)
+        // console.log('全局请求拦截器', 3)
+        // console.log(req, 333)
         return req
       },
       (err: any) => err
@@ -84,8 +84,8 @@ class Request {
           loadingStore.close()
         }, 500)
         // loadingStore.close()
-        console.log('全局响应拦截器', 5)
-        console.log(res, 555)
+        // console.log('全局响应拦截器', 5)
+        // console.log(res, 555)
         return res.data
       },
       (err: any) => {
