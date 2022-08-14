@@ -1,8 +1,3 @@
-/*
-* 引入常用全局变量
-*/
-@import './constant';
-
 // 16 位进制文本颜色和背景颜色
 @each $colorKey, $color in $colors {
   .text-#{$colorKey} {
@@ -51,6 +46,7 @@
   }
 
   // 多行文本省略
+  /* stylelint-disable */
   .text-ellipsis-#{$var} {
     display: -webkit-box;
     -webkit-line-clamp: $var;
@@ -58,6 +54,7 @@
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
   }
+  /* stylelint-enable */
 }
 
 // 百分比、视口宽度和高度
