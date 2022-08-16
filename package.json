@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite",
-    "build:prod": "vue-tsc --noEmit &&cross-env NODE_ENV=production vite build",
+    "build:prod": "vue-tsc --noEmit && cross-env NODE_ENV=production vite build",
     "serve": "vite preview",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
@@ -67,8 +67,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
     }
   },
   "config": {
